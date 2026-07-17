@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="detail-page">
+
+  <!-- Back Bar -->
+  <div class="detail-topbar">
+    <div class="container d-flex align-items-center gap-3">
+      <a href="javascript:history.back()" class="btn-back">
+        <i class="fas fa-arrow-left me-2"></i>{{ t.back }}
+      </a>
+      <div class="breadcrumb-trail">
+        <a href="/">Home</a>
+        <i class="fas fa-chevron-right mx-2 text-muted small"></i>
+        <span>{{ recipe.name }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row g-4">
+
+      <!-- ── LEFT: Recipe ───────────────────────────────────── -->
+      <div class="col-lg-8">
+        <div class="detail-card-pro">
+
+          <!-- Hero Header -->
+          <div class="detail-hero rcp-{{ recipe.diet|replace('-','') }}">
+            <div class="detail-hero-content">
+              <div class="detail-diet-badge">
+                {% if recipe.diet=='vegan' %}🌱 Vegan
+                {% elif recipe.diet=='non-vegetarian' %}🍗 Non-Veg
+                {% else %}🥦 Vegetarian{% endif %}
+              </div>
+              <h1 class="detail-title">
+                {% if lang=='hi' %}{{ recipe.name_hi }}
+                {% elif lang=='kn' %}{{ recipe.name_kn }}
+                {% else %}{{ recipe.name }}{% endif %}
+              </h1>
+              <div class="detail-subtitle">
+                {{ recipe.cuisine }} Cuisine &nbsp;•&nbsp; ⭐ {{ recipe.rating }}/5
+              </div>
+            </div>
+            <div class="detail-hero-emoji">
+              {% if recipe.diet=='vegan' %}🌱
+              {% elif recipe.diet=='non-vegetarian' %}🍗
+              {% else %}🥦{% endif %}
+            </div>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="stats-row">
+            <div class="stat-box">
+              <i class="fas fa-clock stat-icon text-primary"></i>
+              <div class="stat-val">{{ recipe.cook_time }}</div>
+              <div class="stat-lbl">{{ t.mins }}</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <i class="fas fa-users stat-icon text-success"></i>
+              <div class="stat-val">{{ recipe.servings }}</div>
+              <div class="stat-lbl">{{ t.servings }}</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <i class="fas fa-signal stat-icon text-warning"></i>
+              <div class="stat-val">{{ recipe.difficulty }}</div>
+              <div class="stat-lbl">{{ t.difficulty }}</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-box">
+              <i class="fas fa-eye stat-icon text-info"></i>
+              <div class="stat-val">{{ recipe.views }}</div>
+              <div class="stat-lbl">Views</div>
+            </div>
+          </div>
+
+          <div class="detail-body-pro">
+            <!-- Ingredients -->
+            <div class="section-block">
+              <h5 class="block-title">
+                <span class="block-icon bi-green"><i class="fas fa-leaf"></i></span>
+                {{ t.ingredients }}
+              </h5>
+              <div class="ing-grid">
+                {% for ing in recipe.ingredients_list %}
+                <div class="ing-card">
+                  <div class="ing-card-qty">{{ ing.qty }}</div>
+                  <div class="ing-card-name">{{ ing.name }}</div>
+                  {% if substitutes.get(ing.name, {}).get('found') %}
+                  <button class="ing-sub-btn" data-ing="{{ ing.name }}"
+                          title="Find substitute">
+                    <i class="fas fa-exchange-alt"></i>
+                  </button>
+                  {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="section-block">
+              <h5 class="block-title">
+                <span class="block-icon bi-blue"><i class="fas fa-list-ol"></i></span>
+                {{ t.steps }}
+              </h5>
+              <div class="steps-timeline">
+                {% for step in recipe.steps %}
+                <div class="step-item">
+                  <div class="step-circle">{{ loop.index }}</div>
+                  <div class="step-content">{{ step }}</div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- Chef Tip -->
+            {% if recipe.tip %}
+            <div class="chef-tip-pro">
+              <div class="tip-icon">💡</div>
+              <div>
+                <strong>{{ t.tip }}</strong>
+                <p class="mb-0 mt-1">{{ recipe.tip }}</p>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Nutrition, Substitutes, Grocery ─────────── -->
+      <div class="col-lg-4">
+
+        <!-- Nutrition Card -->
+        {% if calorie_info %}
+        <div class="side-card-pro mb-4">
+          <div class="side-card-head sch-primary">
+            <i class="fas fa-chart-pie me-2"></i>{{ t.nutrition }}
+            <span class="side-card-sub">{{ t.per_serving }}</span>
+          </div>
+          <div class="side-card-body-pro">
+            {% set n = calorie_info.per_serving %}
+            <div class="nutr-hero">
+              <div class="nutr-hero-val">{{ n.calories }}</div>
+              <div class="nutr-hero-unit">kcal / serving</div>
+              <div class="nutr-hero-badge badge-{{ calorie_info.calorie_color }}">
+                {{ calorie_info.calorie_label }}
+              </div>
+            </div>
+            <!-- Progress bars for each nutrient -->
+            <div class="nutr-bars">
+              <div class="nutr-bar-item">
+                <div class="nutr-bar-label">
+                  <span>💪 {{ t.protein }}</span><span>{{ n.protein }}g</span>
+                </div>
+                <div class="nutr-progress">
+                  <div class="nutr-fill nf-{{ calorie_info.protein_color }}"
+                       style="width:{{ [((n.protein/50)*100)|int, 100]|min }}%"></div>
+                </div>
+              </div>
+              <div class="nutr-bar-item">
+                <div class="nutr-bar-label">
+                  <span>🍞 {{ t.carbs }}</span><span>{{ n.carbs }}g</span>
+                </div>
+                <div class="nutr-progress">
+                  <div class="nutr-fill nf-{{ calorie_info.carb_color }}"
+                       style="width:{{ [((n.carbs/130)*100)|int, 100]|min }}%"></div>
+                </div>
+              </div>
+              <div class="nutr-bar-item">
+                <div class="nutr-bar-label">
+                  <span>🧈 {{ t.fat }}</span><span>{{ n.fat }}g</span>
+                </div>
+                <div class="nutr-progress">
+                  <div class="nutr-fill nf-{{ calorie_info.fat_color }}"
+                       style="width:{{ [((n.fat/65)*100)|int, 100]|min }}%"></div>
+                </div>
+              </div>
+              <div class="nutr-bar-item">
+                <div class="nutr-bar-label">
+                  <span>🌿 {{ t.fiber }}</span><span>{{ n.fiber }}g</span>
+                </div>
+                <div class="nutr-progress">
+                  <div class="nutr-fill nf-{{ calorie_info.fiber_color }}"
+                       style="width:{{ [((n.fiber/25)*100)|int, 100]|min }}%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Substitutes Card -->
+        {% set found_subs = substitutes.values()|selectattr('found')|list %}
+        {% if found_subs %}
+        <div class="side-card-pro mb-4">
+          <div class="side-card-head sch-warning">
+            <i class="fas fa-exchange-alt me-2"></i>{{ t.substitutes }}
+          </div>
+          <div class="side-card-body-pro p-0">
+            <div class="accordion accordion-flush" id="subAcc">
+              {% for ing, sub in substitutes.items() %}{% if sub.found %}
+              <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed sub-acc-btn"
+                          type="button" data-bs-toggle="collapse"
+                          data-bs-target="#s{{ loop.index }}">
+                    <i class="fas fa-seedling text-warning me-2"></i>{{ ing }}
+                  </button>
+                </h2>
+                <div id="s{{ loop.index }}" class="accordion-collapse collapse">
+                  <div class="accordion-body sub-acc-body">
+                    {% for s in sub.substitutes %}
+                    <div class="sub-option">
+                      <div class="sub-name">✓ {{ s.substitute }}</div>
+                      <div class="sub-ratio">{{ s.ratio }}</div>
+                      <div class="sub-use">Use for: {{ s.use_for }}</div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}{% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Grocery Card -->
+        {% if grocery_links %}
+        <div class="side-card-pro mb-4">
+          <div class="side-card-head sch-success">
+            <i class="fas fa-shopping-cart me-2"></i>{{ t.grocery_order }}
+          </div>
+          <div class="side-card-body-pro">
+            {% for ing, links in grocery_links.items() %}
+            <div class="grocery-row">
+              <div class="grocery-name">{{ ing }}</div>
+              <div class="grocery-btns">
+                <a href="{{ links.blinkit }}" target="_blank" class="gbtn gbtn-blinkit">
+                  🟡 Blinkit
+                </a>
+                <a href="{{ links.zepto }}" target="_blank" class="gbtn gbtn-zepto">
+                  🔴 Zepto
+                </a>
+                <span class="grocery-eta">~{{ links.eta }}</span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Similar Recipes -->
+        {% if similar %}
+        <div class="side-card-pro">
+          <div class="side-card-head" style="background:#37474f;">
+            <i class="fas fa-utensils me-2"></i>{{ t.similar }}
+          </div>
+          <div class="side-card-body-pro p-2">
+            {% for r in similar %}
+            <a href="/recipe/{{ r.id }}" class="similar-row">
+              <div class="similar-dot dot-{{ r.diet|replace('-','') }}"></div>
+              <div class="similar-info">
+                <div class="similar-name">
+                  {% if lang=='hi' %}{{ r.name_hi }}
+                  {% elif lang=='kn' %}{{ r.name_kn }}
+                  {% else %}{{ r.name }}{% endif %}
+                </div>
+                <div class="similar-meta">{{ r.cook_time }} {{ t.mins }} · ⭐ {{ r.rating }}</div>
+              </div>
+              <i class="fas fa-chevron-right similar-arrow"></i>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Substitute Modal -->
+<div class="modal fade" id="subModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 overflow-hidden">
+      <div class="modal-header" style="background:#f57f17; color:#fff; border:0;">
+        <h5 class="modal-title fw-bold">
+          <i class="fas fa-exchange-alt me-2"></i>
+          Substitute for <span id="modalIngName" class="fst-italic"></span>
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" id="modalSubBody" style="padding:1.5rem;"></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.querySelectorAll(".ing-sub-btn").forEach(btn => {
+  btn.addEventListener("click", function() {
+    const ing = this.dataset.ing;
+    fetch(`/api/substitute/${encodeURIComponent(ing)}`)
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById("modalIngName").textContent = ing;
+        let html = "";
+        data.substitutes.forEach(s => {
+          html += `<div style="background:#fff8e1;border-left:4px solid #ffc107;
+                   border-radius:8px;padding:1rem;margin-bottom:.75rem;">
+            <div style="font-weight:700;color:#2e7d32;font-size:1rem;">✓ ${s.substitute}</div>
+            <div style="color:#555;margin-top:.3rem;">${s.ratio}</div>
+            <div style="color:#1565c0;font-size:.85rem;margin-top:.2rem;">Use for: ${s.use_for}</div>
+          </div>`;
+        });
+        document.getElementById("modalSubBody").innerHTML = html;
+        new bootstrap.Modal(document.getElementById("subModal")).show();
+      });
+  });
+});
+document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+</script>
+{% endblock %}

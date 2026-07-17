@@ -1,0 +1,439 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ── HERO ──────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="row align-items-center min-vh-hero">
+      <div class="col-lg-6 hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span>7 AI / ML Features Powered</span>
+        </div>
+        <h1 class="hero-heading">
+          Cook Smarter<br>
+          <span class="hero-highlight">With AI</span>
+        </h1>
+        <p class="hero-desc">
+          {{ t.tagline }} Upload a photo, speak aloud, or type — our AI detects
+          ingredients, suggests recipes, estimates calories, and orders missing items
+          via Blinkit &amp; Zepto instantly.
+        </p>
+        <div class="hero-ai-chips">
+          <span class="ai-chip"><i class="fas fa-camera"></i> Image AI</span>
+          <span class="ai-chip"><i class="fas fa-microphone"></i> Voice</span>
+          <span class="ai-chip"><i class="fas fa-exchange-alt"></i> Substitutes</span>
+          <span class="ai-chip"><i class="fas fa-fire"></i> Calories</span>
+          <span class="ai-chip"><i class="fas fa-shopping-cart"></i> Grocery</span>
+          <span class="ai-chip"><i class="fas fa-globe"></i> 3 Languages</span>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-right d-none d-lg-flex justify-content-center">
+        <div class="hero-illustration">
+          <div class="food-emoji-float e1">🍛</div>
+          <div class="food-emoji-float e2">🥘</div>
+          <div class="food-emoji-float e3">🫓</div>
+          <div class="food-emoji-float e4">🥗</div>
+          <div class="food-emoji-float e5">🍜</div>
+          <div class="hero-circle-main">
+            <i class="fas fa-brain hero-brain-icon"></i>
+            <span class="hero-circle-text">AI Chef</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f8f9fa"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ── SEARCH SECTION ─────────────────────────────────────────────── -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-card-pro">
+
+      <!-- Card Header Tabs -->
+      <div class="input-tabs">
+        <button class="itab itab-active" data-tab="text">
+          <i class="fas fa-keyboard me-2"></i>Type
+        </button>
+        <button class="itab" data-tab="image">
+          <i class="fas fa-camera me-2"></i>Photo AI
+        </button>
+        <button class="itab" data-tab="voice">
+          <i class="fas fa-microphone me-2"></i>Voice
+        </button>
+      </div>
+
+      <form action="/search" method="POST" id="searchForm">
+
+        <!-- TAB: Text Input -->
+        <div class="tab-panel active" id="tab-text">
+          <div class="input-wrapper">
+            <i class="fas fa-search input-icon"></i>
+            <textarea class="pro-input" name="ingredients" id="ingredientInput"
+              rows="2" placeholder="{{ t.type_ingredients }}"></textarea>
+          </div>
+          <div class="tag-row" id="ingredientTags"></div>
+        </div>
+
+        <!-- TAB: Image Upload -->
+        <div class="tab-panel" id="tab-image">
+          <div class="upload-area" id="uploadArea">
+            <input type="file" id="imageUpload" accept="image/*" class="d-none"/>
+            <div id="uploadIdle" class="upload-idle">
+              <div class="upload-icon-wrap">
+                <i class="fas fa-cloud-upload-alt"></i>
+              </div>
+              <p class="upload-title">Drop your photo here</p>
+              <p class="upload-sub">or <span class="upload-link" id="uploadTrigger">browse files</span></p>
+              <p class="upload-hint">PNG, JPG, WEBP up to 16 MB</p>
+            </div>
+            <div id="uploadActive" class="upload-active d-none">
+              <img id="previewImg" src="" alt="" class="upload-preview"/>
+              <div id="detectStatus" class="detect-status">
+                <div class="spinner-border spinner-border-sm text-primary me-2"></div>
+                <span>CNN model detecting ingredients...</span>
+              </div>
+              <div id="detectSuccess" class="detect-success d-none">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <span id="detectedIngText"></span>
+                <button type="button" class="btn-redo" id="uploadRedo">
+                  <i class="fas fa-redo"></i> New photo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: Voice Input -->
+        <div class="tab-panel" id="tab-voice">
+          <div class="voice-area">
+            <button type="button" class="voice-btn-big" id="voiceBtn">
+              <i class="fas fa-microphone" id="micIcon"></i>
+            </button>
+            <p class="voice-label" id="voiceLabel">{{ t.voice_btn }}</p>
+            <p class="voice-hint">Speak ingredient names clearly in English, Hindi, or Kannada</p>
+            <div id="voiceResult" class="voice-result d-none">
+              <i class="fas fa-check-circle text-success me-2"></i>
+              <span id="voiceResultText"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diet & Search Row -->
+        <div class="search-bottom-row">
+          <div class="diet-row">
+            <span class="diet-label-text"><i class="fas fa-filter me-1"></i>Diet:</span>
+            <label class="diet-pill">
+              <input type="radio" name="diet" value="all" checked/>
+              <span>{{ t.diet_all }}</span>
+            </label>
+            <label class="diet-pill">
+              <input type="radio" name="diet" value="vegetarian"/>
+              <span>🥦 {{ t.diet_veg }}</span>
+            </label>
+            <label class="diet-pill">
+              <input type="radio" name="diet" value="vegan"/>
+              <span>🌱 {{ t.diet_vegan }}</span>
+            </label>
+            <label class="diet-pill">
+              <input type="radio" name="diet" value="non-vegetarian"/>
+              <span>🍗 {{ t.diet_nonveg }}</span>
+            </label>
+          </div>
+          <button type="submit" class="btn-find" id="searchBtn">
+            <i class="fas fa-search me-2"></i>{{ t.search_btn }}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── AI FEATURES STRIP ─────────────────────────────────────────── -->
+<section class="features-strip">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feat-item">
+        <div class="feat-icon fi-blue"><i class="fas fa-camera"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Image Detection</div>
+          <div class="feat-sub">CNN + MobileNet</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon fi-green"><i class="fas fa-exchange-alt"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Substitute Suggester</div>
+          <div class="feat-sub">NLP Knowledge Base</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon fi-orange"><i class="fas fa-fire"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Calorie Estimator</div>
+          <div class="feat-sub">Linear Regression</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon fi-purple"><i class="fas fa-microphone"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Voice Input</div>
+          <div class="feat-sub">Speech Recognition</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon fi-teal"><i class="fas fa-star"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Recommender</div>
+          <div class="feat-sub">Content Filtering</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon fi-red"><i class="fas fa-shopping-cart"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Grocery API</div>
+          <div class="feat-sub">Blinkit / Zepto</div>
+        </div>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon fi-indigo"><i class="fas fa-globe"></i></div>
+        <div class="feat-text">
+          <div class="feat-title">Multi-Language</div>
+          <div class="feat-sub">EN / HI / KN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RECOMMENDED ───────────────────────────────────────────────── -->
+{% if recommended %}
+<section class="recipe-section py-5">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon si-yellow"><i class="fas fa-star"></i></div>
+      <div>
+        <h4 class="section-title">{{ t.recommended }}</h4>
+        <p class="section-sub">Personalised picks based on your history</p>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      {% for r in recommended %}
+      <div class="col">
+        <a href="/recipe/{{ r.id }}" class="text-decoration-none">
+          <div class="recipe-card-pro">
+            <div class="rcp-header rcp-{{ r.diet|replace('-','') }}">
+              <div class="rcp-emoji">
+                {% if r.diet=='vegan' %}🌱
+                {% elif r.diet=='non-vegetarian' %}🍗
+                {% else %}🥦{% endif %}
+              </div>
+              <div class="rcp-badges">
+                <span class="rcp-badge">{{ r.cuisine }}</span>
+              </div>
+            </div>
+            <div class="rcp-body">
+              <h6 class="rcp-name">
+                {% if lang=='hi' %}{{ r.name_hi }}
+                {% elif lang=='kn' %}{{ r.name_kn }}
+                {% else %}{{ r.name }}{% endif %}
+              </h6>
+              <div class="rcp-meta">
+                <span><i class="fas fa-clock"></i> {{ r.cook_time }} {{ t.mins }}</span>
+                <span>⭐ {{ r.rating }}</span>
+                <span>{{ r.difficulty }}</span>
+              </div>
+            </div>
+            <div class="rcp-footer">
+              <span>View Recipe <i class="fas fa-arrow-right ms-1"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ── POPULAR ───────────────────────────────────────────────────── -->
+{% if popular %}
+<section class="recipe-section py-5 bg-light">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-icon si-red"><i class="fas fa-fire"></i></div>
+      <div>
+        <h4 class="section-title">{{ t.popular }}</h4>
+        <p class="section-sub">Most loved recipes by our community</p>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+      {% for r in popular %}
+      <div class="col">
+        <a href="/recipe/{{ r.id }}" class="text-decoration-none">
+          <div class="recipe-card-pro">
+            <div class="rcp-header rcp-{{ r.diet|replace('-','') }}">
+              <div class="rcp-emoji">
+                {% if r.diet=='vegan' %}🌱
+                {% elif r.diet=='non-vegetarian' %}🍗
+                {% else %}🥦{% endif %}
+              </div>
+              <div class="rcp-badges">
+                <span class="rcp-badge">{{ r.cuisine }}</span>
+              </div>
+            </div>
+            <div class="rcp-body">
+              <h6 class="rcp-name">
+                {% if lang=='hi' %}{{ r.name_hi }}
+                {% elif lang=='kn' %}{{ r.name_kn }}
+                {% else %}{{ r.name }}{% endif %}
+              </h6>
+              <div class="rcp-meta">
+                <span><i class="fas fa-clock"></i> {{ r.cook_time }} {{ t.mins }}</span>
+                <span>⭐ {{ r.rating }}</span>
+                <span><i class="fas fa-eye"></i> {{ r.views }}</span>
+              </div>
+            </div>
+            <div class="rcp-footer">
+              <span>View Recipe <i class="fas fa-arrow-right ms-1"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+/* ── Input Tabs ──────────────────────────────────────────── */
+document.querySelectorAll(".itab").forEach(tab => {
+  tab.addEventListener("click", function() {
+    document.querySelectorAll(".itab").forEach(t => t.classList.remove("itab-active"));
+    document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+    this.classList.add("itab-active");
+    document.getElementById("tab-" + this.dataset.tab).classList.add("active");
+  });
+});
+
+/* ── Image Upload ─────────────────────────────────────────── */
+const uploadArea    = document.getElementById("uploadArea");
+const imageUpload   = document.getElementById("imageUpload");
+const uploadTrigger = document.getElementById("uploadTrigger");
+const uploadRedo    = document.getElementById("uploadRedo");
+
+if(uploadArea) {
+  uploadArea.addEventListener("click", e => { if(!e.target.closest(".btn-redo")) imageUpload.click(); });
+  uploadArea.addEventListener("dragover", e => { e.preventDefault(); uploadArea.classList.add("drag-over"); });
+  uploadArea.addEventListener("dragleave", () => uploadArea.classList.remove("drag-over"));
+  uploadArea.addEventListener("drop", e => { e.preventDefault(); uploadArea.classList.remove("drag-over"); if(e.dataTransfer.files[0]) processImage(e.dataTransfer.files[0]); });
+}
+if(uploadRedo) uploadRedo.addEventListener("click", () => { imageUpload.click(); });
+imageUpload && imageUpload.addEventListener("change", () => { if(imageUpload.files[0]) processImage(imageUpload.files[0]); });
+
+function processImage(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    document.getElementById("uploadIdle").classList.add("d-none");
+    document.getElementById("uploadActive").classList.remove("d-none");
+    document.getElementById("previewImg").src = e.target.result;
+    document.getElementById("detectStatus").classList.remove("d-none");
+    document.getElementById("detectSuccess").classList.add("d-none");
+  };
+  reader.readAsDataURL(file);
+  const fd = new FormData(); fd.append("image", file);
+  fetch("/api/detect", { method:"POST", body:fd })
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById("detectStatus").classList.add("d-none");
+      if(d.success && d.ingredients.length) {
+        document.getElementById("detectSuccess").classList.remove("d-none");
+        document.getElementById("detectedIngText").textContent = "Found: " + d.ingredients.join(", ");
+        document.getElementById("ingredientInput").value = d.ingredients.join(", ");
+        updateTags(d.ingredients);
+        // Switch to text tab to show ingredients
+        document.querySelectorAll(".itab")[0].click();
+      }
+    }).catch(() => document.getElementById("detectStatus").classList.add("d-none"));
+}
+
+/* ── Voice Input ──────────────────────────────────────────── */
+const voiceBtn = document.getElementById("voiceBtn");
+if(voiceBtn) {
+  voiceBtn.addEventListener("click", function() {
+    const label  = document.getElementById("voiceLabel");
+    const micIcon= document.getElementById("micIcon");
+    micIcon.className  = "fas fa-stop";
+    voiceBtn.classList.add("voice-btn-active");
+    label.textContent  = "Listening...";
+    fetch("/api/voice", { method:"POST" })
+      .then(r => r.json())
+      .then(d => {
+        micIcon.className = "fas fa-microphone";
+        voiceBtn.classList.remove("voice-btn-active");
+        label.textContent = "{{ t.voice_btn }}";
+        if(d.success && d.ingredients.length) {
+          document.getElementById("voiceResult").classList.remove("d-none");
+          document.getElementById("voiceResultText").textContent = d.ingredients.join(", ");
+          document.getElementById("ingredientInput").value = d.ingredients.join(", ");
+          updateTags(d.ingredients);
+          setTimeout(() => document.querySelectorAll(".itab")[0].click(), 800);
+        } else {
+          label.textContent = "Tap to try again";
+        }
+      }).catch(() => {
+        micIcon.className = "fas fa-microphone";
+        voiceBtn.classList.remove("voice-btn-active");
+        label.textContent = "Microphone unavailable — type ingredients manually";
+      });
+  });
+}
+
+/* ── Ingredient Tags ──────────────────────────────────────── */
+const ta = document.getElementById("ingredientInput");
+if(ta) {
+  ta.addEventListener("input", () => {
+    const items = ta.value.split(",").map(s=>s.trim()).filter(Boolean);
+    updateTags(items);
+  });
+}
+function updateTags(items) {
+  const container = document.getElementById("ingredientTags");
+  if(!container) return;
+  container.innerHTML = items.map(i =>
+    `<span class="ing-tag-pro">${i}<button type="button" onclick="removeTag('${i}')">&times;</button></span>`
+  ).join("");
+}
+function removeTag(item) {
+  if(!ta) return;
+  const items = ta.value.split(",").map(s=>s.trim()).filter(s=>s&&s!==item);
+  ta.value = items.join(", ");
+  updateTags(items);
+}
+
+/* ── Search loading ───────────────────────────────────────── */
+const sf = document.getElementById("searchForm");
+const sb = document.getElementById("searchBtn");
+if(sf && sb) {
+  sf.addEventListener("submit", () => {
+    sb.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Finding...`;
+    sb.disabled = true;
+  });
+}
+</script>
+{% endblock %}

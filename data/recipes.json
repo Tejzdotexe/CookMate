@@ -1,0 +1,476 @@
+[
+  {
+    "id": 1, "name": "Dal Tadka", "name_hi": "दाल तड़का", "name_kn": "ದಾಲ್ ತಡ್ಕಾ",
+    "cuisine": "North Indian", "diet": "vegetarian", "cook_time": 30, "servings": 4, "difficulty": "Easy",
+    "rating": 4.8, "views": 1250,
+    "ingredients_list": [
+      {"name": "yellow lentils", "qty": "1 cup"}, {"name": "onion", "qty": "1 large"},
+      {"name": "tomato", "qty": "2 medium"}, {"name": "garlic", "qty": "4 cloves"},
+      {"name": "ginger", "qty": "1 inch"}, {"name": "cumin seeds", "qty": "1 tsp"},
+      {"name": "turmeric", "qty": "0.5 tsp"}, {"name": "red chilli powder", "qty": "1 tsp"},
+      {"name": "ghee", "qty": "2 tbsp"}, {"name": "salt", "qty": "to taste"},
+      {"name": "coriander leaves", "qty": "handful"}
+    ],
+    "steps": [
+      "Wash yellow lentils thoroughly and boil with turmeric and 3 cups water for 15-20 minutes until soft.",
+      "Heat ghee in a pan over medium flame. Add cumin seeds and let them splutter for 30 seconds.",
+      "Add finely chopped onions and fry until golden brown (about 5-6 minutes).",
+      "Add ginger-garlic paste and sauté for 2 minutes until raw smell disappears.",
+      "Add chopped tomatoes, red chilli powder and cook until oil separates (about 5 minutes).",
+      "Mash the boiled dal and pour the tadka over it. Mix well and adjust consistency with water.",
+      "Garnish with fresh coriander leaves. Serve hot with steamed rice or phulka."
+    ],
+    "tags": ["lentils", "protein", "comfort food", "dal", "healthy"],
+    "tip": "For extra smoky flavour, place a piece of coal in a small bowl in the dal and pour a drop of ghee over it, then cover for 2 minutes."
+  },
+  {
+    "id": 2, "name": "Aloo Paratha", "name_hi": "आलू पराठा", "name_kn": "ಆಲೂ ಪರಾಠ",
+    "cuisine": "Punjabi", "diet": "vegetarian", "cook_time": 40, "servings": 3, "difficulty": "Medium",
+    "rating": 4.9, "views": 2100,
+    "ingredients_list": [
+      {"name": "wheat flour", "qty": "2 cups"}, {"name": "potato", "qty": "3 medium"},
+      {"name": "onion", "qty": "1 medium"}, {"name": "green chilli", "qty": "2"},
+      {"name": "cumin seeds", "qty": "1 tsp"}, {"name": "coriander powder", "qty": "1 tsp"},
+      {"name": "garam masala", "qty": "0.5 tsp"}, {"name": "salt", "qty": "to taste"},
+      {"name": "butter", "qty": "2 tbsp"}, {"name": "coriander leaves", "qty": "handful"}
+    ],
+    "steps": [
+      "Knead wheat flour into a soft smooth dough with water, a pinch of salt and 1 tsp oil. Rest covered for 20 minutes.",
+      "Boil potatoes until completely soft. Peel and mash with no lumps.",
+      "Mix mashed potato with finely chopped onion, green chilli, cumin seeds, coriander powder, garam masala and salt.",
+      "Divide dough and filling into equal balls. Roll a dough ball into a small disc.",
+      "Place filling in centre, bring edges together and seal. Gently roll into a flat 6-inch circle.",
+      "Cook on hot tawa with butter on both sides until golden brown spots appear.",
+      "Serve hot with curd, pickle, and extra butter."
+    ],
+    "tags": ["breakfast", "potato", "flatbread", "stuffed", "Punjabi"],
+    "tip": "Ensure no lumps in potato filling to prevent paratha from tearing while rolling."
+  },
+  {
+    "id": 3, "name": "Paneer Butter Masala", "name_hi": "पनीर बटर मसाला", "name_kn": "ಪನೀರ್ ಬಟರ್ ಮಸಾಲ",
+    "cuisine": "North Indian", "diet": "vegetarian", "cook_time": 35, "servings": 4, "difficulty": "Medium",
+    "rating": 4.9, "views": 3200,
+    "ingredients_list": [
+      {"name": "paneer", "qty": "250g"}, {"name": "tomato", "qty": "4 large"},
+      {"name": "onion", "qty": "2 medium"}, {"name": "cashews", "qty": "12"},
+      {"name": "butter", "qty": "3 tbsp"}, {"name": "cream", "qty": "3 tbsp"},
+      {"name": "ginger garlic paste", "qty": "2 tsp"}, {"name": "red chilli powder", "qty": "1 tsp"},
+      {"name": "coriander powder", "qty": "2 tsp"}, {"name": "garam masala", "qty": "1 tsp"},
+      {"name": "sugar", "qty": "1 tsp"}, {"name": "salt", "qty": "to taste"},
+      {"name": "kasuri methi", "qty": "1 tsp"}
+    ],
+    "steps": [
+      "Blanch tomatoes and blend with onions and cashews into a completely smooth paste.",
+      "Heat butter in a pan. Fry ginger-garlic paste until raw smell disappears.",
+      "Add the tomato-onion-cashew paste and cook on medium flame until butter separates (10 minutes).",
+      "Add red chilli powder, coriander powder, salt, and sugar. Cook for 5 more minutes.",
+      "Add 1/2 cup water and bring to a gentle boil. Add paneer cubes.",
+      "Stir in fresh cream and simmer for 3 minutes.",
+      "Crush kasuri methi between palms and sprinkle over gravy. Serve with naan or jeera rice."
+    ],
+    "tags": ["paneer", "rich", "restaurant style", "gravy", "North Indian"],
+    "tip": "Soak cashews in warm water for 15 minutes before blending for a creamier gravy."
+  },
+  {
+    "id": 4, "name": "Masala Dosa", "name_hi": "मसाला डोसा", "name_kn": "ಮಸಾಲ ದೋಸ",
+    "cuisine": "South Indian", "diet": "vegetarian", "cook_time": 45, "servings": 4, "difficulty": "Medium",
+    "rating": 4.8, "views": 2800,
+    "ingredients_list": [
+      {"name": "rice", "qty": "2 cups"}, {"name": "urad dal", "qty": "0.5 cup"},
+      {"name": "potato", "qty": "4 medium"}, {"name": "onion", "qty": "2 medium"},
+      {"name": "mustard seeds", "qty": "1 tsp"}, {"name": "curry leaves", "qty": "10"},
+      {"name": "green chilli", "qty": "2"}, {"name": "turmeric", "qty": "0.5 tsp"},
+      {"name": "oil", "qty": "3 tbsp"}, {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Soak rice and urad dal separately for 6-8 hours. Grind to smooth batter and ferment overnight.",
+      "Boil potatoes until soft. Heat oil, add mustard seeds and let them splutter.",
+      "Add curry leaves, green chilli, and sliced onions. Sauté until onions turn soft.",
+      "Add boiled mashed potatoes, turmeric, salt. Mix well to make the masala filling.",
+      "Heat a flat tawa. Sprinkle water and wipe. Pour a ladle of batter and spread in circular motion.",
+      "Drizzle oil around edges. Once golden and crispy, place potato filling in centre.",
+      "Fold dosa over filling. Serve hot with coconut chutney and sambar."
+    ],
+    "tags": ["breakfast", "South Indian", "crispy", "dosa", "fermented"],
+    "tip": "The tawa must be well-seasoned and hot before spreading batter for crispy dosas."
+  },
+  {
+    "id": 5, "name": "Chicken Biryani", "name_hi": "चिकन बिरयानी", "name_kn": "ಚಿಕನ್ ಬಿರ್ಯಾನಿ",
+    "cuisine": "Hyderabadi", "diet": "non-vegetarian", "cook_time": 90, "servings": 6, "difficulty": "Hard",
+    "rating": 4.9, "views": 5100,
+    "ingredients_list": [
+      {"name": "chicken", "qty": "1 kg"}, {"name": "basmati rice", "qty": "2 cups"},
+      {"name": "onion", "qty": "3 large"}, {"name": "yogurt", "qty": "1 cup"},
+      {"name": "ginger garlic paste", "qty": "3 tsp"}, {"name": "biryani masala", "qty": "3 tbsp"},
+      {"name": "mint leaves", "qty": "handful"}, {"name": "saffron", "qty": "pinch"},
+      {"name": "ghee", "qty": "4 tbsp"}, {"name": "tomato", "qty": "2 medium"},
+      {"name": "whole spices", "qty": "2 bay leaves, 4 cardamom, 6 cloves"},
+      {"name": "salt", "qty": "to taste"}, {"name": "lemon juice", "qty": "2 tbsp"}
+    ],
+    "steps": [
+      "Marinate chicken with yogurt, ginger-garlic paste, biryani masala, lemon juice, salt for minimum 2 hours.",
+      "Fry thinly sliced onions in ghee until deep golden brown (birista). Drain and set aside.",
+      "Parboil basmati rice with whole spices, salt until 70% cooked. Drain completely.",
+      "Cook marinated chicken in a heavy pot until 80% done. Layer cooked rice over chicken.",
+      "Add mint leaves, half the birista, saffron milk, and ghee over the rice layer.",
+      "Seal the pot tightly with dough or foil. Cook on dum on very low flame for 25 minutes.",
+      "Gently mix before serving. Garnish with remaining birista and boiled eggs. Serve with raita."
+    ],
+    "tags": ["biryani", "rice", "festive", "chicken", "Hyderabadi"],
+    "tip": "The dum (slow steam) is the secret — never rush this step for perfectly cooked biryani."
+  },
+  {
+    "id": 6, "name": "Palak Paneer", "name_hi": "पालक पनीर", "name_kn": "ಪಾಲಕ್ ಪನೀರ್",
+    "cuisine": "North Indian", "diet": "vegetarian", "cook_time": 35, "servings": 4, "difficulty": "Easy",
+    "rating": 4.7, "views": 1900,
+    "ingredients_list": [
+      {"name": "spinach", "qty": "500g"}, {"name": "paneer", "qty": "200g"},
+      {"name": "onion", "qty": "1 large"}, {"name": "tomato", "qty": "2 medium"},
+      {"name": "garlic", "qty": "5 cloves"}, {"name": "ginger", "qty": "1 inch"},
+      {"name": "cream", "qty": "2 tbsp"}, {"name": "cumin seeds", "qty": "1 tsp"},
+      {"name": "garam masala", "qty": "0.5 tsp"}, {"name": "oil", "qty": "2 tbsp"},
+      {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Blanch spinach in boiling salted water for 2 minutes. Immediately transfer to ice water to retain green colour.",
+      "Blend blanched spinach into completely smooth puree. Set aside.",
+      "Heat oil, add cumin seeds. Add chopped onion and fry until golden brown.",
+      "Add ginger-garlic paste and tomatoes. Cook until tomatoes become soft and mushy.",
+      "Add spinach puree, salt, garam masala. Simmer on medium flame for 5 minutes.",
+      "Lightly pan-fry paneer cubes until golden. Add to the spinach gravy.",
+      "Stir in cream, simmer for 2 minutes. Serve with roti or naan."
+    ],
+    "tags": ["spinach", "healthy", "iron rich", "paneer", "vegetarian"],
+    "tip": "Blanching spinach in ice water immediately after boiling preserves the beautiful bright green colour."
+  },
+  {
+    "id": 7, "name": "Chole Bhature", "name_hi": "छोले भटूरे", "name_kn": "ಛೋಲೆ ಭಟೂರೆ",
+    "cuisine": "Punjabi", "diet": "vegetarian", "cook_time": 60, "servings": 4, "difficulty": "Medium",
+    "rating": 4.8, "views": 2400,
+    "ingredients_list": [
+      {"name": "chickpeas", "qty": "2 cups"}, {"name": "all-purpose flour", "qty": "2 cups"},
+      {"name": "onion", "qty": "2 large"}, {"name": "tomato", "qty": "3 medium"},
+      {"name": "ginger garlic paste", "qty": "2 tsp"}, {"name": "chole masala", "qty": "3 tbsp"},
+      {"name": "yogurt", "qty": "0.5 cup"}, {"name": "oil", "qty": "for frying"},
+      {"name": "baking soda", "qty": "0.5 tsp"}, {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Soak chickpeas overnight. Pressure cook with a tea bag (for dark colour) and salt for 5-6 whistles.",
+      "Prepare bhature dough with flour, yogurt, baking soda, salt. Knead well and rest for 30 minutes.",
+      "Heat oil, fry onions until golden. Add ginger-garlic paste, then tomatoes and chole masala.",
+      "Cook masala until oil separates. Add cooked chickpeas with some cooking water.",
+      "Simmer chole on low flame for 15 minutes until thick and well-coated.",
+      "Roll bhature dough into oval shapes. Deep fry in hot oil until puffed and golden.",
+      "Serve bhature immediately with chole, sliced onions, lemon wedge, and green chutney."
+    ],
+    "tags": ["chickpeas", "fried", "street food", "Punjabi", "weekend special"],
+    "tip": "Fry bhature on medium-high heat; too low makes them oily, too high burns them."
+  },
+  {
+    "id": 8, "name": "Egg Fried Rice", "name_hi": "एग फ्राइड राइस", "name_kn": "ಮೊಟ್ಟೆ ಫ್ರೈಡ್ ರೈಸ್",
+    "cuisine": "Indo-Chinese", "diet": "non-vegetarian", "cook_time": 20, "servings": 3, "difficulty": "Easy",
+    "rating": 4.6, "views": 1800,
+    "ingredients_list": [
+      {"name": "cooked rice", "qty": "2 cups"}, {"name": "eggs", "qty": "3"},
+      {"name": "onion", "qty": "1 medium"}, {"name": "carrot", "qty": "1 medium"},
+      {"name": "capsicum", "qty": "1"}, {"name": "spring onion", "qty": "2 stalks"},
+      {"name": "soy sauce", "qty": "2 tbsp"}, {"name": "garlic", "qty": "4 cloves"},
+      {"name": "oil", "qty": "3 tbsp"}, {"name": "black pepper", "qty": "1 tsp"},
+      {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Use day-old cold rice for best results. Break any clumps with a fork.",
+      "Heat oil in a wok on HIGH flame. Scramble eggs until just cooked. Remove and set aside.",
+      "In same wok, add more oil. Fry minced garlic for 30 seconds.",
+      "Add all finely chopped vegetables and stir-fry on high heat for 3 minutes.",
+      "Add rice and toss constantly on high heat for 3-4 minutes.",
+      "Add soy sauce, salt, and black pepper. Mix thoroughly.",
+      "Add scrambled eggs back, toss well. Garnish with spring onion greens. Serve immediately."
+    ],
+    "tags": ["rice", "eggs", "quick meal", "Chinese", "weeknight"],
+    "tip": "High heat is the secret to non-sticky, restaurant-style fried rice."
+  },
+  {
+    "id": 9, "name": "Sambar", "name_hi": "सांभर", "name_kn": "ಸಾಂಬಾರ್",
+    "cuisine": "South Indian", "diet": "vegan", "cook_time": 40, "servings": 6, "difficulty": "Easy",
+    "rating": 4.7, "views": 1600,
+    "ingredients_list": [
+      {"name": "toor dal", "qty": "1 cup"}, {"name": "drumstick", "qty": "2"},
+      {"name": "tomato", "qty": "2 medium"}, {"name": "onion", "qty": "1 medium"},
+      {"name": "tamarind", "qty": "small lemon sized ball"}, {"name": "sambar powder", "qty": "3 tbsp"},
+      {"name": "mustard seeds", "qty": "1 tsp"}, {"name": "curry leaves", "qty": "10"},
+      {"name": "dried red chilli", "qty": "2"}, {"name": "oil", "qty": "2 tbsp"},
+      {"name": "turmeric", "qty": "0.5 tsp"}, {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Pressure cook toor dal with turmeric until very soft. Mash completely.",
+      "Soak tamarind in 1 cup warm water for 15 minutes. Squeeze and extract thick juice.",
+      "Cook drumstick pieces in tamarind water until tender.",
+      "Add sambar powder, chopped tomatoes, onion, salt and cooked dal.",
+      "Simmer on medium flame until vegetables are soft and sambar thickens (15 minutes).",
+      "Prepare tadka: heat oil, add mustard seeds, curry leaves, dried red chilli.",
+      "Pour tadka over sambar. Serve hot with idli, dosa, or steamed rice."
+    ],
+    "tags": ["lentil soup", "South Indian", "healthy", "vegan", "comfort"],
+    "tip": "Sambar tastes best when made a few hours ahead, allowing flavours to deepen."
+  },
+  {
+    "id": 10, "name": "Mango Lassi", "name_hi": "आम की लस्सी", "name_kn": "ಮಾವಿನ ಲಸ್ಸಿ",
+    "cuisine": "Indian", "diet": "vegetarian", "cook_time": 5, "servings": 2, "difficulty": "Easy",
+    "rating": 4.9, "views": 2200,
+    "ingredients_list": [
+      {"name": "mango", "qty": "2 large ripe"}, {"name": "yogurt", "qty": "1 cup"},
+      {"name": "milk", "qty": "0.5 cup"}, {"name": "sugar", "qty": "2 tbsp"},
+      {"name": "cardamom powder", "qty": "0.25 tsp"}, {"name": "ice cubes", "qty": "8"}
+    ],
+    "steps": [
+      "Peel ripe mangoes, remove seed, and roughly chop the flesh.",
+      "Add mango chunks, yogurt, milk, and sugar to a blender.",
+      "Blend on high speed until completely smooth.",
+      "Add cardamom powder and ice cubes. Blend for another 30 seconds.",
+      "Taste and adjust sweetness.",
+      "Pour into tall chilled glasses and serve immediately."
+    ],
+    "tags": ["drink", "summer", "mango", "lassi", "refreshing"],
+    "tip": "Use Alphonso or Kesar mangoes for the best flavour and natural sweetness."
+  },
+  {
+    "id": 11, "name": "Vegetable Pulao", "name_hi": "वेजिटेबल पुलाव", "name_kn": "ತರಕಾರಿ ಪುಲಾವ್",
+    "cuisine": "Indian", "diet": "vegan", "cook_time": 30, "servings": 4, "difficulty": "Easy",
+    "rating": 4.5, "views": 1300,
+    "ingredients_list": [
+      {"name": "basmati rice", "qty": "2 cups"}, {"name": "carrot", "qty": "2 medium"},
+      {"name": "peas", "qty": "0.5 cup"}, {"name": "potato", "qty": "1 large"},
+      {"name": "onion", "qty": "1 large"}, {"name": "cumin seeds", "qty": "1 tsp"},
+      {"name": "ginger garlic paste", "qty": "1 tsp"}, {"name": "oil", "qty": "2 tbsp"},
+      {"name": "salt", "qty": "to taste"}, {"name": "mint leaves", "qty": "handful"},
+      {"name": "whole spices", "qty": "2 bay leaves, 3 cardamom, 4 cloves"}
+    ],
+    "steps": [
+      "Wash and soak basmati rice for 30 minutes. Drain well.",
+      "Heat oil in a heavy pot. Add whole spices and cumin seeds until fragrant.",
+      "Add sliced onion and fry until golden. Add ginger-garlic paste.",
+      "Add all chopped vegetables and sauté for 3 minutes.",
+      "Add soaked rice, 3.5 cups water, salt, and mint leaves.",
+      "Bring to a boil. Cover tightly and cook on very low flame for 15 minutes.",
+      "Switch off heat. Rest covered for 5 minutes. Fluff with fork. Serve with raita."
+    ],
+    "tags": ["rice", "one-pot", "quick", "vegan", "weeknight"],
+    "tip": "Do not lift the lid while cooking — steam is essential for perfectly cooked pulao."
+  },
+  {
+    "id": 12, "name": "Gulab Jamun", "name_hi": "गुलाब जामुन", "name_kn": "ಗುಲಾಬ್ ಜಾಮೂನ್",
+    "cuisine": "Indian", "diet": "vegetarian", "cook_time": 45, "servings": 20, "difficulty": "Medium",
+    "rating": 4.9, "views": 3100,
+    "ingredients_list": [
+      {"name": "milk powder", "qty": "1 cup"}, {"name": "all-purpose flour", "qty": "2 tbsp"},
+      {"name": "baking soda", "qty": "0.25 tsp"}, {"name": "ghee", "qty": "1 tbsp"},
+      {"name": "milk", "qty": "3 tbsp"}, {"name": "sugar", "qty": "1.5 cups"},
+      {"name": "water", "qty": "1 cup"}, {"name": "cardamom", "qty": "3 pods"},
+      {"name": "rose water", "qty": "1 tsp"}, {"name": "oil", "qty": "for deep frying"}
+    ],
+    "steps": [
+      "Make sugar syrup: boil sugar and water with cardamom pods until slightly sticky (1-string consistency). Add rose water.",
+      "Mix milk powder, all-purpose flour, baking soda, and ghee together.",
+      "Add milk gradually to make a very soft, smooth dough that is not sticky.",
+      "With greased hands, shape into small smooth balls with absolutely no cracks.",
+      "Heat oil to medium temperature (not too hot). Fry balls on LOW-MEDIUM heat, stirring gently.",
+      "Fry until dark golden brown on all sides (about 6-8 minutes).",
+      "Transfer immediately to warm sugar syrup. Soak for minimum 2 hours before serving."
+    ],
+    "tags": ["dessert", "sweet", "festive", "fried", "Diwali"],
+    "tip": "The key to perfect gulab jamun is frying on low heat — this ensures they cook inside without burning."
+  },
+  {
+    "id": 13, "name": "Butter Chicken", "name_hi": "बटर चिकन", "name_kn": "ಬಟರ್ ಚಿಕನ್",
+    "cuisine": "North Indian", "diet": "non-vegetarian", "cook_time": 50, "servings": 4, "difficulty": "Medium",
+    "rating": 4.9, "views": 4200,
+    "ingredients_list": [
+      {"name": "chicken", "qty": "750g"}, {"name": "tomato", "qty": "4 large"},
+      {"name": "onion", "qty": "2 medium"}, {"name": "butter", "qty": "4 tbsp"},
+      {"name": "cream", "qty": "4 tbsp"}, {"name": "ginger garlic paste", "qty": "3 tsp"},
+      {"name": "yogurt", "qty": "0.5 cup"}, {"name": "red chilli powder", "qty": "2 tsp"},
+      {"name": "garam masala", "qty": "1 tsp"}, {"name": "cashews", "qty": "10"},
+      {"name": "kasuri methi", "qty": "2 tsp"}, {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Marinate chicken with yogurt, half the ginger-garlic paste, 1 tsp red chilli, salt for 1 hour.",
+      "Grill or pan-fry marinated chicken until charred and cooked. Set aside.",
+      "Blend tomatoes and cashews into smooth paste.",
+      "Melt butter in pan. Fry remaining ginger-garlic paste. Add tomato-cashew paste.",
+      "Cook until butter separates. Add red chilli powder, garam masala, salt.",
+      "Add cooked chicken and cream. Simmer for 10 minutes.",
+      "Crush kasuri methi and add. Garnish with cream swirl. Serve with naan."
+    ],
+    "tags": ["chicken", "makhani", "rich", "restaurant", "popular"],
+    "tip": "Charring the chicken before adding to gravy gives the authentic smoky restaurant flavour."
+  },
+  {
+    "id": 14, "name": "Idli Sambhar", "name_hi": "इडली सांभर", "name_kn": "ಇಡ್ಲಿ ಸಾಂಬಾರ್",
+    "cuisine": "South Indian", "diet": "vegan", "cook_time": 30, "servings": 4, "difficulty": "Easy",
+    "rating": 4.8, "views": 2000,
+    "ingredients_list": [
+      {"name": "urad dal", "qty": "1 cup"}, {"name": "rice", "qty": "2 cups"},
+      {"name": "toor dal", "qty": "0.5 cup"}, {"name": "onion", "qty": "1 medium"},
+      {"name": "tomato", "qty": "2 medium"}, {"name": "sambar powder", "qty": "2 tbsp"},
+      {"name": "tamarind", "qty": "small ball"}, {"name": "mustard seeds", "qty": "1 tsp"},
+      {"name": "curry leaves", "qty": "10"}, {"name": "oil", "qty": "2 tbsp"},
+      {"name": "salt", "qty": "to taste"}, {"name": "baking soda", "qty": "pinch"}
+    ],
+    "steps": [
+      "Soak rice and urad dal separately for 6 hours. Grind to smooth batter and ferment overnight.",
+      "Add salt and baking soda to batter. Grease idli moulds and steam for 10-12 minutes.",
+      "For sambar: pressure cook toor dal until soft.",
+      "Prepare tamarind extract. Cook vegetables in tamarind water with sambar powder.",
+      "Add cooked dal and simmer until thick.",
+      "Prepare tadka with mustard seeds and curry leaves. Pour over sambar.",
+      "Serve hot idlis with sambar and coconut chutney."
+    ],
+    "tags": ["breakfast", "South Indian", "steamed", "healthy", "classic"],
+    "tip": "Ferment batter in a warm place for 8-12 hours for perfectly soft and fluffy idlis."
+  },
+  {
+    "id": 15, "name": "Rajma Chawal", "name_hi": "राजमा चावल", "name_kn": "ರಾಜ್ಮಾ ಚಾವಲ್",
+    "cuisine": "North Indian", "diet": "vegan", "cook_time": 60, "servings": 4, "difficulty": "Easy",
+    "rating": 4.7, "views": 1700,
+    "ingredients_list": [
+      {"name": "kidney beans", "qty": "1.5 cups"}, {"name": "tomato", "qty": "3 medium"},
+      {"name": "onion", "qty": "2 large"}, {"name": "ginger garlic paste", "qty": "2 tsp"},
+      {"name": "cumin seeds", "qty": "1 tsp"}, {"name": "coriander powder", "qty": "2 tsp"},
+      {"name": "red chilli powder", "qty": "1 tsp"}, {"name": "garam masala", "qty": "1 tsp"},
+      {"name": "oil", "qty": "3 tbsp"}, {"name": "basmati rice", "qty": "2 cups"},
+      {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Soak kidney beans overnight. Pressure cook with salt for 6-8 whistles until soft.",
+      "Cook basmati rice separately. Keep warm.",
+      "Heat oil, add cumin seeds. Add onions and fry until golden brown.",
+      "Add ginger-garlic paste. Fry for 2 minutes. Add tomatoes and all spices.",
+      "Cook masala until oil separates completely (10 minutes).",
+      "Add cooked rajma with its water. Mash some beans for thick gravy.",
+      "Simmer for 15 minutes. Serve over steamed rice with raw onion and pickles."
+    ],
+    "tags": ["kidney beans", "rice", "comfort food", "North Indian", "protein"],
+    "tip": "Always use the water in which rajma was pressure cooked — it adds deep flavour to the gravy."
+  },
+  {
+    "id": 16, "name": "Pav Bhaji", "name_hi": "पाव भाजी", "name_kn": "ಪಾವ್ ಭಾಜಿ",
+    "cuisine": "Mumbai Street Food", "diet": "vegetarian", "cook_time": 35, "servings": 4, "difficulty": "Easy",
+    "rating": 4.8, "views": 2600,
+    "ingredients_list": [
+      {"name": "potato", "qty": "4 medium"}, {"name": "cauliflower", "qty": "1 cup florets"},
+      {"name": "peas", "qty": "0.5 cup"}, {"name": "capsicum", "qty": "1"},
+      {"name": "tomato", "qty": "3 large"}, {"name": "onion", "qty": "2 large"},
+      {"name": "butter", "qty": "4 tbsp"}, {"name": "pav bhaji masala", "qty": "3 tbsp"},
+      {"name": "bread rolls", "qty": "8"}, {"name": "lemon juice", "qty": "2 tbsp"},
+      {"name": "salt", "qty": "to taste"}, {"name": "coriander leaves", "qty": "handful"}
+    ],
+    "steps": [
+      "Boil potato, cauliflower, and peas together until completely soft. Mash roughly.",
+      "Heat butter in a large flat pan. Add finely chopped onions and fry until golden.",
+      "Add chopped capsicum and tomatoes. Cook until completely soft and mushy.",
+      "Add boiled mashed vegetables, pav bhaji masala, and salt. Mix and mash everything together.",
+      "Cook on medium heat, mashing constantly, adding water as needed for consistency.",
+      "Butter the pav rolls and toast on the same pan until golden and crispy.",
+      "Top bhaji with butter, lemon juice, and coriander. Serve with toasted pav and raw onions."
+    ],
+    "tags": ["street food", "Mumbai", "vegetarian", "quick", "popular"],
+    "tip": "Keep mashing the bhaji while cooking — the texture should be smooth with no whole pieces."
+  },
+  {
+    "id": 17, "name": "Fish Curry", "name_hi": "फिश करी", "name_kn": "ಮೀನು ಸಾರು",
+    "cuisine": "Coastal Indian", "diet": "non-vegetarian", "cook_time": 30, "servings": 4, "difficulty": "Medium",
+    "rating": 4.7, "views": 1500,
+    "ingredients_list": [
+      {"name": "fish", "qty": "500g"}, {"name": "coconut milk", "qty": "1 cup"},
+      {"name": "tomato", "qty": "2 medium"}, {"name": "onion", "qty": "1 large"},
+      {"name": "ginger", "qty": "1 inch"}, {"name": "garlic", "qty": "5 cloves"},
+      {"name": "turmeric", "qty": "0.5 tsp"}, {"name": "red chilli powder", "qty": "2 tsp"},
+      {"name": "mustard seeds", "qty": "1 tsp"}, {"name": "curry leaves", "qty": "12"},
+      {"name": "oil", "qty": "3 tbsp"}, {"name": "tamarind", "qty": "small ball"},
+      {"name": "salt", "qty": "to taste"}
+    ],
+    "steps": [
+      "Marinate fish with turmeric, salt, and a pinch of red chilli for 15 minutes.",
+      "Soak tamarind in warm water. Grind onion, ginger, garlic into paste.",
+      "Heat oil, add mustard seeds and curry leaves until they splutter.",
+      "Add onion-ginger-garlic paste and fry until golden (5 minutes).",
+      "Add tomatoes, red chilli powder, turmeric. Cook until oil separates.",
+      "Add tamarind extract and coconut milk. Bring to gentle boil.",
+      "Add marinated fish. Simmer gently for 8-10 minutes. Do not over-stir. Serve with rice."
+    ],
+    "tags": ["fish", "coastal", "coconut milk", "seafood", "South Indian"],
+    "tip": "Gently simmer fish — boiling aggressively breaks the fish and makes it tough."
+  },
+  {
+    "id": 18, "name": "Chana Masala", "name_hi": "चना मसाला", "name_kn": "ಚನಾ ಮಸಾಲ",
+    "cuisine": "Punjabi", "diet": "vegan", "cook_time": 45, "servings": 4, "difficulty": "Easy",
+    "rating": 4.6, "views": 1400,
+    "ingredients_list": [
+      {"name": "chickpeas", "qty": "2 cups"}, {"name": "onion", "qty": "2 large"},
+      {"name": "tomato", "qty": "3 medium"}, {"name": "ginger garlic paste", "qty": "2 tsp"},
+      {"name": "chana masala", "qty": "2 tbsp"}, {"name": "cumin seeds", "qty": "1 tsp"},
+      {"name": "coriander powder", "qty": "1 tsp"}, {"name": "oil", "qty": "3 tbsp"},
+      {"name": "lemon juice", "qty": "1 tbsp"}, {"name": "salt", "qty": "to taste"},
+      {"name": "coriander leaves", "qty": "handful"}
+    ],
+    "steps": [
+      "Soak chickpeas overnight. Pressure cook until very soft (4-5 whistles).",
+      "Heat oil, add cumin seeds. Add onions and fry until deep golden brown.",
+      "Add ginger-garlic paste. Fry 2 minutes. Add tomatoes and all spices.",
+      "Cook masala until oil separates well.",
+      "Add cooked chickpeas with some cooking water. Mash a few chickpeas for thick gravy.",
+      "Simmer for 10-15 minutes until flavours meld well.",
+      "Finish with lemon juice and coriander. Serve with bhature, puri, or rice."
+    ],
+    "tags": ["chickpeas", "vegan", "protein", "Punjabi", "healthy"],
+    "tip": "Mashing 1/4 of the chickpeas creates a naturally thick, restaurant-style gravy."
+  },
+  {
+    "id": 19, "name": "Upma", "name_hi": "उपमा", "name_kn": "ಉಪ್ಮಾ",
+    "cuisine": "South Indian", "diet": "vegan", "cook_time": 20, "servings": 3, "difficulty": "Easy",
+    "rating": 4.4, "views": 900,
+    "ingredients_list": [
+      {"name": "semolina", "qty": "1 cup"}, {"name": "onion", "qty": "1 medium"},
+      {"name": "green chilli", "qty": "2"}, {"name": "ginger", "qty": "0.5 inch"},
+      {"name": "mustard seeds", "qty": "1 tsp"}, {"name": "curry leaves", "qty": "10"},
+      {"name": "cashews", "qty": "10"}, {"name": "oil", "qty": "2 tbsp"},
+      {"name": "salt", "qty": "to taste"}, {"name": "lemon juice", "qty": "1 tbsp"},
+      {"name": "coriander leaves", "qty": "handful"}
+    ],
+    "steps": [
+      "Dry roast semolina in a pan on medium heat until light golden and aromatic (3-4 minutes). Set aside.",
+      "Heat oil, add mustard seeds and cashews. When seeds splutter, add curry leaves.",
+      "Add chopped onions, green chilli, and ginger. Sauté until onions are soft.",
+      "Add 2.5 cups boiling water and salt. Bring to a rolling boil.",
+      "Add roasted semolina gradually while stirring continuously to avoid lumps.",
+      "Cover and cook on low heat for 2-3 minutes, stirring occasionally.",
+      "Switch off, add lemon juice, mix well. Garnish with coriander. Serve hot."
+    ],
+    "tags": ["breakfast", "South Indian", "quick", "semolina", "healthy"],
+    "tip": "Always add semolina to boiling water while stirring — this is the key to lump-free upma."
+  },
+  {
+    "id": 20, "name": "Kheer", "name_hi": "खीर", "name_kn": "ಖೀರ್",
+    "cuisine": "Indian", "diet": "vegetarian", "cook_time": 45, "servings": 6, "difficulty": "Easy",
+    "rating": 4.8, "views": 2300,
+    "ingredients_list": [
+      {"name": "milk", "qty": "1 litre"}, {"name": "rice", "qty": "3 tbsp"},
+      {"name": "sugar", "qty": "4 tbsp"}, {"name": "cardamom", "qty": "4 pods"},
+      {"name": "cashews", "qty": "10"}, {"name": "almonds", "qty": "10"},
+      {"name": "raisins", "qty": "2 tbsp"}, {"name": "saffron", "qty": "pinch"},
+      {"name": "rose water", "qty": "1 tsp"}
+    ],
+    "steps": [
+      "Wash rice. Soak saffron in 2 tbsp warm milk.",
+      "Bring full-fat milk to boil in a heavy-bottomed pot. Reduce to medium flame.",
+      "Add washed rice to boiling milk. Cook stirring frequently for 30-35 minutes.",
+      "Milk will reduce to half. Rice should be completely soft and dissolved.",
+      "Add sugar, crushed cardamom, and saffron milk. Stir well.",
+      "Add sliced almonds, cashews, and raisins. Cook 5 more minutes.",
+      "Add rose water. Serve warm or chilled, garnished with chopped nuts."
+    ],
+    "tags": ["dessert", "sweet", "milk", "rice pudding", "festive"],
+    "tip": "Use full-fat milk and keep stirring frequently to prevent burning at the bottom."
+  }
+]

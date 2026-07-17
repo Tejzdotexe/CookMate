@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>{{ t.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}"/>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────────── -->
+<nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <div class="brand-icon">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <div>
+        <span class="brand-name">RecipeAI</span>
+        <span class="brand-tag">Smart Kitchen</span>
+      </div>
+    </a>
+    <div class="ms-auto d-flex align-items-center gap-2">
+      <div class="lang-switcher">
+        <i class="fas fa-globe me-1"></i>
+        {% for code, name in languages.items() %}
+        <a href="/lang/{{ code }}"
+           class="lang-pill {% if lang==code %}lang-active{% endif %}">
+          {{ name }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div class="container mt-3">
+  {% for cat, msg in messages %}
+  <div class="alert alert-{{ cat }} alert-dismissible fade show rounded-pill px-4" role="alert">
+    <i class="fas fa-info-circle me-2"></i>{{ msg }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+
+<main>{% block content %}{% endblock %}</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-icon brand-icon-sm"><i class="fas fa-utensils"></i></div>
+        <span>RecipeAI — Smart Kitchen Assistant</span>
+      </div>
+      <p class="footer-sub">MAEC258 | Department of MCA | RVITM | A.Y 2025-2026</p>
+      <div class="footer-badges">
+        <span class="fbadge fbadge-blue"><i class="fas fa-camera me-1"></i>CNN Detection</span>
+        <span class="fbadge fbadge-green"><i class="fas fa-exchange-alt me-1"></i>NLP Substitute</span>
+        <span class="fbadge fbadge-orange"><i class="fas fa-fire me-1"></i>Calorie AI</span>
+        <span class="fbadge fbadge-purple"><i class="fas fa-microphone me-1"></i>Voice Input</span>
+        <span class="fbadge fbadge-teal"><i class="fas fa-star me-1"></i>Recommender</span>
+        <span class="fbadge fbadge-red"><i class="fas fa-shopping-cart me-1"></i>Grocery API</span>
+        <span class="fbadge fbadge-indigo"><i class="fas fa-globe me-1"></i>Multi-Language</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
