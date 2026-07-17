@@ -1,6 +1,5 @@
 # AI-Powered Smart Recipe Generator
-### MAEC258 – Ability Enhancement Courses with Seminar-I
-**RV Institute of Technology and Management | Department of MCA | A.Y 2025-2026**
+
 
 ---
 
