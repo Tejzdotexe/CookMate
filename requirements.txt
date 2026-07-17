@@ -1,7 +1,7 @@
 flask==3.0.3
 nltk==3.8.1
 scikit-learn==1.4.2
-numpy==2.2.6
+numpy==2.0.0rc1
 Pillow==10.3.0
 SpeechRecognition==3.10.4
 tensorflow==2.16.1
