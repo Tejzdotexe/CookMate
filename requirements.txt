@@ -1,0 +1,10 @@
+flask
+nltk
+scikit-learn
+numpy
+Pillow
+SpeechRecognition
+pyaudio
+tensorflow
+opencv-python-headless
+werkzeug
